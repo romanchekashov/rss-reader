@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "ru.besttuts.rssreader"
+        minSdkVersion 14
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        androidTest {
+            setRoot('src/test')
+        }
+    }
+}
+
+configurations {
+    all*.exclude group: 'commons-logging', module: 'commons-logging'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.+'
+    compile 'com.android.support:recyclerview-v7:21.0.+'
+    compile 'com.android.support:cardview-v7:21.0.+'
+
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile('com.squareup.retrofit:converter-simplexml:1.9.0') {
+        exclude group: 'stax'
+        exclude group: 'xpp3'
+    }
+//    compile 'org.simpleframework:simple-xml:2.7.1'
+    compile 'com.google.code.gson:gson:2.3.1'
+//    compile 'com.google.guava:guava:18.0'
+
+    // for image loading and caching
+    compile 'com.squareup.picasso:picasso:2.5.0'
+
+    testCompile "junit:junit:4.10"
+    testCompile "org.assertj:assertj-core:1.7.0"
+    testCompile "org.robolectric:robolectric:3.0-SNAPSHOT"
+
+    // only required for android studio to see these dependencies
+    androidTestCompile "junit:junit:4.10"
+    androidTestCompile "org.assertj:assertj-core:1.7.0"
+    androidTestCompile "org.robolectric:robolectric:3.0-SNAPSHOT"
+}

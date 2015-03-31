@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RSS reader</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="loading">Waiting for sync...</string>
+</resources>
