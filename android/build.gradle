@@ -49,10 +49,10 @@ dependencies {
 
     testCompile "junit:junit:4.10"
     testCompile "org.assertj:assertj-core:1.7.0"
-    testCompile "org.robolectric:robolectric:3.0-SNAPSHOT"
+    testCompile "org.robolectric:robolectric:3.0"
 
     // only required for android studio to see these dependencies
     androidTestCompile "junit:junit:4.10"
     androidTestCompile "org.assertj:assertj-core:1.7.0"
-    androidTestCompile "org.robolectric:robolectric:3.0-SNAPSHOT"
+    androidTestCompile "org.robolectric:robolectric:3.0"
 }
